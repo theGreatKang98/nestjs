@@ -37,9 +37,6 @@ import {
   
     @Patch(':id')
     patch(@Param('id') movieId: string, @Body() updateData) {
-      return {
-        updatedMovie: movieId,
-        ...updateData,
-      };
+      return this.moviesService.patch(movieId, updateData)
     }
   }
